@@ -1,0 +1,13 @@
+nginx:
+  build: ./nginx
+  ports: 
+    - "80:80" #映射到本地的端口
+  volumes: 
+    - /Users/mr.yun/docker-test/docker-demo/dist:/www
+
+node:
+  build: ./node
+  ports:
+    - "8085:8080" #映射到本地的端口 本地访问8085，即访问容器内的8080
+  volumes:
+    - /Users/mr.yun/docker-test/docker-demo:/www
